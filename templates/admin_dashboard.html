@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Instructor Dashboard</h2>
+<a href="{{ url_for('admin_logout') }}">Logout</a>
+
+<h3>Create New Exam</h3>
+<form method="post" class="form">
+  <label>Exam Title</label>
+  <input name="title" required />
+
+  <label>Duration (minutes)</label>
+  <input name="duration_minutes" type="number" min="1" value="30" required />
+
+  <label>Question Paper Format</label>
+  <textarea name="questions" rows="12" placeholder="Q: What is 2 + 2?
+- 3
+- 4
+- 5
+A: 4
+
+Q: Capital of France?
+- London
+- Paris
+- Rome
+A: Paris" required></textarea>
+
+  <button type="submit">Create Exam</button>
+</form>
+
+<h3>Created Exams</h3>
+<table>
+  <tr><th>Title</th><th>Code</th><th>Duration</th><th>Created</th></tr>
+  {% for exam in exams %}
+  <tr>
+    <td>{{ exam['title'] }}</td>
+    <td><code>{{ exam['exam_code'] }}</code></td>
+    <td>{{ exam['duration_minutes'] }} min</td>
+    <td>{{ exam['created_at'] }}</td>
+  </tr>
+  {% else %}
+  <tr><td colspan="4">No exams yet.</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Online Mock Test Platform</h1>
+<p>Create exams with access code, enforce timer, and allow only official college domain login.</p>
+<p>Required student email domain: <strong>@{{ domain }}</strong></p>
+<div class="card-row">
+  <a class="card" href="{{ url_for('admin_login') }}">Instructor Login</a>
+  <a class="card" href="{{ url_for('student_login') }}">Student Login</a>
+</div>
+{% endblock %}

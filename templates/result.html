@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Result</h2>
+<p>Exam: <strong>{{ attempt['title'] }}</strong></p>
+<p>Exam Code: <code>{{ attempt['exam_code'] }}</code></p>
+{% if attempt['score'] is not none %}
+  <p>Your Score: <strong>{{ attempt['score'] }}/{{ attempt['total'] }}</strong></p>
+  <p>Submitted At: {{ attempt['submitted_at'] }}</p>
+{% else %}
+  <p>Not submitted yet.</p>
+{% endif %}
+<a href="{{ url_for('student_home') }}">Back to Student Panel</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Student Login</h2>
+<form method="post" class="form">
+  <label>College Email</label>
+  <input name="email" type="email" placeholder="yourname@{{ domain }}" required />
+  <button type="submit">Continue</button>
+</form>
+{% endblock %}

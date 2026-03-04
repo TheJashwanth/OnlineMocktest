@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Instructor Login</h2>
+<form method="post" class="form">
+  <label>Instructor Key</label>
+  <input name="admin_key" type="password" required />
+  <button type="submit">Login</button>
+</form>
+<p>Default key is <code>admin123</code>. Change with <code>ADMIN_KEY</code> env variable.</p>
+{% endblock %}
