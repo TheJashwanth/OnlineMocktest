@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ exam['title'] }}</h2>
+<p>Exam Code: <code>{{ exam['exam_code'] }}</code></p>
+<p>Time Remaining: <strong id="timer"></strong></p>
+
+<form method="post" id="exam-form" class="form">
+  {% for q in questions %}
+    <fieldset>
+      <legend>Q{{ loop.index }}. {{ q['question'] }}</legend>
+      {% for option in q['options'] %}
+        <label class="option">
+          <input type="radio" name="q{{ loop.parent.index0 }}" value="{{ option }}" />
+          {{ option }}
+        </label>
+      {% endfor %}
+    </fieldset>
+  {% endfor %}
+  <button type="submit">Submit Exam</button>
+</form>
+
+<script>
+  let remaining = {{ remaining }};
+  const timerEl = document.getElementById('timer');
+  const form = document.getElementById('exam-form');
+
+  function tick() {
+    const min = Math.floor(remaining / 60);
+    const sec = remaining % 60;
+    timerEl.textContent = `${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+
+    if (remaining <= 0) {
+      form.submit();
+      return;
+    }
+    remaining -= 1;
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>
+{% endblock %}

@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f6fa;
+}
+
+nav {
+  background: #202a44;
+  padding: 12px;
+}
+
+nav a {
+  color: #fff;
+  margin-right: 16px;
+  text-decoration: none;
+}
+
+main {
+  max-width: 900px;
+  margin: 24px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea, button {
+  padding: 10px;
+  font-size: 14px;
+}
+
+button {
+  background: #202a44;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.card-row {
+  display: flex;
+  gap: 10px;
+}
+
+.card {
+  display: inline-block;
+  background: #e9eefc;
+  padding: 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #202a44;
+}
+
+.flash-list {
+  list-style: none;
+  padding: 0;
+}
+
+.flash-list li {
+  background: #fff4cc;
+  border: 1px solid #f0d26a;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+fieldset {
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.option {
+  display: block;
+  margin: 6px 0;
+}
+
+code {
+  background: #f1f1f1;
+  padding: 2px 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
